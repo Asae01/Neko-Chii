@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact • Neko-Chii!</title>
+
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 10rem;
+            text-align: center;
+        }
+        .contact-card {
+            padding: 4rem 3rem;
+            background: rgba(183, 75, 75, 0.1);
+            border-radius: 3rem;
+            backdrop-filter: blur(15px);
+            margin: 4rem 0;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: popIn 0.8s ease-out forwards;
+        }
+        .contact-card:nth-child(2) { animation-delay: 0.3s; }
+        .contact-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .contact-icon {
+            font-size: 5rem;
+            color: #b74b4b;
+            margin-bottom: 2rem;
+        }
+        .contact-card h2 {
+            font-size: 4rem;
+            color: #b74b4b;
+            margin-bottom: 1.5rem;
+        }
+        .contact-card p {
+            font-size: 2.2rem;
+            margin: 1.5rem 0;
+        }
+        .big-btn {
+            display: inline-block;
+            margin: 2rem 1rem;
+            padding: 1.8rem 4rem;
+            font-size: 2.2rem;
+            background: #b74b4b;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.4s ease;
+            box-shadow: 0 10px 30px rgba(183, 75, 75, 0.3);
+        }
+        .big-btn:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(183, 75, 75, 0.4);
+        }
+        @keyframes popIn {
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="page-transition">
+
+    <header>
+        <a href="index.html" class="logo">Neko-Chii!</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" style="flex-direction: column;">
+        <div class="contact-container">
+
+            <h1 style="font-size: 6.5rem; color: #b74b4b; margin-bottom: 3rem;">Contact Me</h1>
+
+            <div class="contact-card">
+                <div class="contact-icon">Sparkles</div>
+                <h2>Fastest way to order</h2>
+                <p>DM me anytime — I reply in minutes!</p>
+                
+                <a href="https://instagram.com/yourusername" target="_blank" class="big-btn">
+                    <i class="fa-brands fa-instagram"></i> Instagram DM
+                </a>
+                <a href="https://tiktok.com/@yourusername" target="_blank" class="big-btn">
+                    <i class="fa-brands fa-tiktok"></i> TikTok DM
+                </a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">Heart</div>
+                <h2>Other platforms</h2>
+                <p>
+                    WhatsApp • Telegram • Facebook • Twitter<br>
+                    Just search @NekoChii everywhere!
+                </p>
+            </div>
+
+            <a href="services.html" class="btn" style="margin-top: 4rem; font-size: 2rem;">
+                ← Back to Services
+            </a>
+
+        </div>
+    </section>
+
+</body>
+</html>
