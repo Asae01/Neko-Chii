@@ -64,17 +64,23 @@
 </head>
 <body class="page-transition">
 
-    <header>
-        <a href="index.html" class="logo">Neko-Chii!</a>
-        <nav>
+<header>
+    <a href="index.html" class="logo">Neko-Chii!</a>
+
+    <!-- Hamburger icon (only shows on mobile) -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <nav id="navbar">
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="skills.html">Skills</a>
             <a href="education.html">Education</a>
             <a href="experience.html">Experience</a>
             <a href="contact.html" class="active">Contact</a>
-        </nav>
-    </header>
+    </nav>
+</header>
 
     <section class="home" style="flex-direction: column;">
         <div class="contact-container">
@@ -110,5 +116,10 @@
         </div>
     </section>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById("navbar").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
