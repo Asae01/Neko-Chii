@@ -241,13 +241,13 @@ span{
         content: " Premium App";
     }
     41%, 60%{
-        content: " blabla";
+        content: " Proofneeds";
     }
     61%, 80%{
-        content: " vlaval";
+        content: " Social Media Needs";
     }
     81%, 100%{
-        content: " salsa";
+        content: " Sumthin";
     }
 }
 
@@ -349,4 +349,48 @@ body {
     font-size: 2.8rem;
     margin: 2rem 0;
     }
+}
+/* Hide header on scroll down, show on scroll up */
+header {
+    transition: transform 0.4s ease;
+    transform: translateY(0);
+}
+
+header.hide {
+    transform: translateY(-100%);
+}
+
+/* Only apply on screens wider than mobile (optional) */
+@media (min-width: 996px) {
+    header.hide { transform: translateY(-100%); }
+}
+
+.floating-cat {
+    position: fixed;
+    bottom: 220px;
+    right: 1100px;
+    width: 350px;
+    z-index: 98;
+    pointer-events: none;
+    animation: float 5s ease-in-out infinite;
+}
+
+.floating-cat2 {
+    position: fixed;
+    bottom: 150px;
+    right: 50px;
+    width: 350px;
+    z-index: 98;
+    pointer-events: none;
+    animation: float 5s ease-in-out infinite;
+}
+
+.floating-cat3 {
+    position: fixed;
+    bottom: 150px;
+    right: 50px;
+    width: 200px;
+    z-index: 98;
+    pointer-events: none;
+    animation: float 5s ease-in-out infinite;
 }
