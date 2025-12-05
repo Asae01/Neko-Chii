@@ -37,29 +37,59 @@
             <!-- Add your services here — you can style them however you want later -->
             <div style="margin: 4rem 0; padding: 2rem; background: rgba(183, 75, 75, 0.1); border-radius: 2rem;">
                 <h2 style="font-size: 3.5rem; color: #b74b4b;">In-Game Top Up</h2>
-                <p>ML, Genshin, HSR, PUBG, Valorant, etc.</p>
+                <p>ML, Free_Fire, PUBG, Valorant, etc</p>
             </div>
 
             <div style="margin: 4rem 0; padding: 2rem; background: rgba(183, 75, 75, 0.1); border-radius: 2rem;">
                 <h2 style="font-size: 3.5rem; color: #b74b4b;">Premium Apps & Accounts</h2>
-                <p>Netflix, Spotify, Canva Pro, YouTube Premium, etc.</p>
+                <p>Netflix, Spotify, Canva Pro, YouTube Premium, etc</p>
             </div>
 
             <div style="margin: 4rem 0; padding: 2rem; background: rgba(183, 75, 75, 0.1); border-radius: 2rem;">
-                <h2 style="font-size: 3.5rem; color: #b74b4b;">Custom Requests</h2>
-                <p>Anything else? Just DM me!</p>
+                <h2 style="font-size: 3.5rem; color: #b74b4b;">Proofneeds</h2>
+                <p>Mood Board, Mood Board Decoration and QR Decoration</p>
             </div>
 
-            <a href="https://instagram.com/yourusername" target="_blank" class="btn" style="margin-top: 4rem;">
-                Order via Instagram / DM
+            <div style="margin: 4rem 0; padding: 2rem; background: rgba(183, 75, 75, 0.1); border-radius: 2rem;">
+                <h2 style="font-size: 3.5rem; color: #b74b4b;">Social Media Needs</h2>
+                <p>Up Likes, Up Subs and Up Views</p>
+            </div>
+
+            <a href="https://t.me/NekochiiStore" target="_blank" class="btn" style="margin-top: 4rem;">
+                Order via Telegram / DM
             </a>
         </div>
     </section>
     
     <script>
+        // Toggle mobile menu
         function toggleMenu() {
             document.getElementById("navbar").classList.toggle("active");
         }
+
+        // Hide header when scrolling down, show when scrolling up
+        let lastScroll = 0;
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                document.querySelector("header").classList.remove("hide");
+                return;
+            }
+
+            if (currentScroll > lastScroll && !document.querySelector("header").classList.contains("hide")) {
+                // scrolling down
+                document.querySelector("header").classList.add("hide");
+            } else if (currentScroll < lastScroll && document.querySelector("header").classList.contains("hide")) {
+                // scrolling up
+                document.querySelector("header").classList.remove("hide");
+            }
+
+            lastScroll = currentScroll;
+        });
     </script>
+    <img src="services page.jpeg" class="floating-cat">
+</body>
+</html>
 </body>
 </html>
