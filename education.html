@@ -128,9 +128,35 @@
     </section>
 
     <script>
+        // Toggle mobile menu
         function toggleMenu() {
             document.getElementById("navbar").classList.toggle("active");
         }
+
+        // Hide header when scrolling down, show when scrolling up
+        let lastScroll = 0;
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                document.querySelector("header").classList.remove("hide");
+                return;
+            }
+
+            if (currentScroll > lastScroll && !document.querySelector("header").classList.contains("hide")) {
+                // scrolling down
+                document.querySelector("header").classList.add("hide");
+            } else if (currentScroll < lastScroll && document.querySelector("header").classList.contains("hide")) {
+                // scrolling up
+                document.querySelector("header").classList.remove("hide");
+            }
+
+            lastScroll = currentScroll;
+        });
     </script>
+
+    <img src="education page.jpeg" class="floating-cat">
+</body>
+</html>
 </body>
 </html>
