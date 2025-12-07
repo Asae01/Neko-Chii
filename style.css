@@ -244,7 +244,7 @@ span{
         content: " Proofneeds";
     }
     61%, 80%{
-        content: " Social Media Needs";
+        content: " Soc Med Needs";
     }
     81%, 100%{
         content: " Sumthin";
@@ -312,44 +312,90 @@ body {
     to   { transform: translateX(0); opacity: 1; }
 }
 
-/* Hamburger menu button - visible only on mobile */
+/* ——— ULTRA CUTE MOBILE MENU ——— */
 .menu-toggle {
     display: none;
-    font-size: 3rem;
+    font-size: 3.2rem;
     color: #b74b4b;
+    background: rgba(255,255,255,0.9);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(183,75,75,0.3);
+    backdrop-filter: blur(10px);
     cursor: pointer;
     z-index: 101;
+    transition: all 0.3s ease;
 }
 
+.menu-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(183,75,75,0.5);
+}
+
+/* Show on mobile */
 @media (max-width: 995px) {
     .menu-toggle {
-        display: block;
+        display: flex;
     }
-    
+
     nav {
         position: fixed;
         top: 0;
         right: -100%;
+        width: 85%;
+        max-width: 380px;
         height: 100vh;
-        width: 70%;
-        background: rgba(0,0,0,0.95);
+        background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+        backdrop-filter: blur(15px);
+        box-shadow: -10px 0 30px rgba(183,75,75,0.2);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: 0.5s ease;
+        transition: right 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         z-index: 100;
+        padding: 2rem;
+        border-left: 4px solid #b74b4b;
     }
-    
+
     nav.active {
         right: 0;
     }
-    
+
     nav a {
-    font-size: 2.8rem;
-    margin: 2rem 0;
+        font-size: 2.8rem;
+        color: #b74b4b;
+        margin: 1.8rem 0;
+        padding: 1.2rem 3rem;
+        border-radius: 50px;
+        width: 80%;
+        text-align: center;
+        background: rgba(255,255,255,0.7);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        font-weight: 600;
+    }
+
+    nav a:hover,
+    nav a.active {
+        background: #b74b4b;
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(183,75,75,0.4);
     }
 }
+
+/* Hamburger → X animation */
+.menu-toggle.active .fas::before {
+    content: "\f00d"; /* × icon */
+}
+
+
 /* Hide header on scroll down, show on scroll up */
 header {
     transition: transform 0.4s ease;
@@ -365,32 +411,63 @@ header.hide {
     header.hide { transform: translateY(-100%); }
 }
 
-.floating-cat {
-    position: fixed;
-    bottom: 220px;
-    right: 1100px;
-    width: 350px;
-    z-index: 98;
-    pointer-events: none;
-    animation: float 5s ease-in-out infinite;
-}
-
-.floating-cat2 {
-    position: fixed;
-    bottom: 150px;
-    right: 50px;
-    width: 350px;
-    z-index: 98;
-    pointer-events: none;
-    animation: float 5s ease-in-out infinite;
-}
-
+/* Floating cats – responsive & never cover text */
+.floating-cat,
+.floating-cat2,
 .floating-cat3 {
-    position: fixed;
-    bottom: 150px;
-    right: 50px;
-    width: 200px;
+    position: absolute;
+    width: 220px;                   /* good size on laptop */
+    max-width: 38vw;                /* shrinks perfectly on phone */
     z-index: 98;
     pointer-events: none;
-    animation: float 5s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Specific positions – feel free to move them */
+.floating-cat   { bottom: 180px; left: 20px; }      /* left side */
+.floating-cat2  { bottom: 80px;  right: 20px; }     /* bottom-right */
+.floating-cat3  { bottom: 280px; right: 30px; }     /* higher right */
+
+/* On mobile: make cats smaller + give space at bottom */
+@media (max-width: 995px) {
+    .floating-cat,
+    .floating-cat2,
+    .floating-cat3 {
+        width: 100px;
+        max-width: 30vw;
+    }
+    
+    .floating-cat   { bottom: 280px; left: 10px; }
+    .floating-cat2  { bottom: 470px;  right: 10px; }
+    .floating-cat3  { bottom: 450px; left: 15px; }
+
+    /* Prevent cats from hiding buttons/text */
+    section {
+        padding-bottom: 200px !important;
+    }
+}
+
+/* Cute floating animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-25px) rotate(5deg); }
+}
+
+/* Perfect centering on mobile – fixes the off-center issue */
+@media (max-width: 995px) {
+    .exp-container {
+        padding: 14rem 5% 10rem !important;   /* more top space + side margins */
+        margin: 0 auto;
+    }
+    
+    .exp-grid {
+        grid-template-columns: 1fr;           /* one card per row on phone */
+        gap: 2.5rem;
+        padding: 0 2rem;
+    }
+    
+    .exp-card {
+        margin: 0 auto;
+        max-width: 380px;
+    }
 }
