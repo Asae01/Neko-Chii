@@ -5,55 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Experience • Neko-Chii!</title>
+    <title>Reviews • Neko-Chii!</title>
 
     <style>
-        .exp-container {
-            max-width: 900px;
+        .reviews-container {
+            max-width: 1000px;
             margin: 0 auto;
-            padding-top: 10rem;
+            padding: 12rem 5% 10rem;
             text-align: center;
         }
-        .exp-grid {
+        .review-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
-            margin-top: 5rem;
+            margin-top: 4rem;
         }
-        .exp-card {
+        .review-card {
+            background: rgba(183, 75, 75, 0.08);
             padding: 3rem 2rem;
-            background: rgba(183, 75, 75, 0.1);
-            border-radius: 2rem;
+            border-radius: 2.5rem;
+            box-shadow: 0 10px 30px rgba(183,75,75,0.15);
             backdrop-filter: blur(10px);
-            transition: 0.4s ease;
-            opacity: 0;
-            transform: translateY(50px);
-            animation: floatIn 0.8s ease-out forwards;
+            transition: 0.4s;
         }
-        .exp-card:hover {
+        .review-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(183, 75, 75, 0.2);
+            box-shadow: 0 20px 40px rgba(183,75,75,0.25);
         }
-        .exp-card:nth-child(1) { animation-delay: 0.2s; }
-        .exp-card:nth-child(2) { animation-delay: 0.4s; }
-        .exp-card:nth-child(3) { animation-delay: 0.6s; }
-
-        .exp-icon {
-            font-size: 4.5rem;
-            color: #b74b4b;
-            margin-bottom: 2rem;
-        }
-        .exp-card h3 {
-            font-size: 3rem;
-            color: #b74b4b;
+        .stars {
+            color: #ffd700;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
         }
-        .exp-card p {
-            font-size: 1.8rem;
-            line-height: 1.6;
+        .review-text {
+            font-size: 1.9rem;
+            line-height: 1.7;
+            font-style: italic;
+            margin: 2rem 0;
         }
-        @keyframes floatIn {
-            to { opacity: 1; transform: translateY(0); }
+        .reviewer {
+            font-weight: 600;
+            color: #b74b4b;
+            font-size: 2rem;
+        }
+        @media (max-width: 995px) {
+            .reviews-container { padding-top: 16rem; }
+            .review-grid { grid-template-columns: 1fr; gap: 2.5rem; }
         }
     </style>
 </head>
@@ -61,84 +58,72 @@
 
 <header>
     <a href="index.html" class="logo">Neko-Chii!</a>
-
-    <!-- Hamburger icon (only shows on mobile) -->
     <div class="menu-toggle" onclick="toggleMenu()">
         <i class="fas fa-bars"></i>
     </div>
 
     <nav id="navbar">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="skills.html">Skills</a>
-            <a href="education.html">Education</a>
-            <a href="experience.html" class="active">Experience</a>
-            <a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="skills.html">Skills</a>
+        <a href="education.html">FAQ</a>
+        <a href="experience.html" class="active">Reviews</a>
+        <a href="contact.html">Contact</a>
     </nav>
 </header>
 
-    <section class="home" style="flex-direction: column;">
-        <div class="exp-container">
-            <h1 style="font-size: 6.5rem; color: #b74b4b; margin-bottom: 3rem;">Experience ♡</h1>
-            <p style="font-size: 2rem; margin-bottom: 5rem;">I've been hustling online for years ~ super trusted seller!</p>
+<section class="home" style="flex-direction: column; text-align: center;">
+    <div class="reviews-container">
+        <h1 style="font-size: 6.5rem; color: #b74b4b; margin-bottom: 3rem;">Reviews ♡</h1>
+        <p style="font-size: 2.2rem; margin-bottom: 4rem;">3000+ happy customers can't be wrong!</p>
 
-            <div class="exp-grid">
-
-                <div class="exp-card">
-                    <div class="exp-icon">💎</div>
-                    <h3>3000+ Orders</h3>
-                    <p>Successfully delivered top-ups, premium accounts, and custom requests with 100% satisfaction rate ♡</p>
-                </div>
-
-                <div class="exp-card">
-                    <div class="exp-icon">⏰</div>
-                    <h3>Super Fast Delivery</h3>
-                    <p>Most orders done in under 10 minutes! Always online and ready to help you~</p>
-                </div>
-
-                <div class="exp-card">
-                    <div class="exp-icon">⭐</div>
-                    <h3>Trusted Seller</h3>
-                    <p>Thousands of happy customers • Zero bans • Proofs & vouchers available • Many repeat buyers!</p>
-                </div>
-
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Fastest top-up ever! Got my diamonds in 5 mins, super legit!"</p>
+                <div class="reviewer">— ML Player</div>
             </div>
 
-            <a href="contact.html" class="btn" style="margin-top: 6rem; font-size: 2rem; padding: 1.5rem 4rem;">
-                Contact Me Now ♡
-            </a>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Netflix account works perfectly, sis is so kind and patient!"</p>
+                <div class="reviewer">— Student Girl</div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Trusted 100%, already my 10th order. Thank you Achii!"</p>
+                <div class="reviewer">— Genshin Addict</div>
+            </div>
         </div>
-    </section>
 
-    <script>
-        // Toggle mobile menu
-        function toggleMenu() {
-            document.getElementById("navbar").classList.toggle("active");
+        <a href="contact.html" class="btn" style="margin-top: 6rem; font-size: 2.2rem; padding: 1.5rem 4rem;">
+            Order Now ♡
+        </a>
+    </div>
+</section>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("navbar").classList.toggle("active");
+    }
+
+    let lastScroll = 0;
+    window.addEventListener("scroll", () => {
+        let currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+            document.querySelector("header").classList.remove("hide");
+            return;
         }
+        if (currentScroll > lastScroll && !document.querySelector("header").classList.contains("hide")) {
+            document.querySelector("header").classList.add("hide");
+        } else if (currentScroll < lastScroll && document.querySelector("header").classList.contains("hide")) {
+            document.querySelector("header").classList.remove("hide");
+        }
+        lastScroll = currentScroll;
+    });
+</script>
 
-        // Hide header when scrolling down, show when scrolling up
-        let lastScroll = 0;
-        window.addEventListener("scroll", () => {
-            let currentScroll = window.pageYOffset;
-
-            if (currentScroll <= 0) {
-                document.querySelector("header").classList.remove("hide");
-                return;
-            }
-
-            if (currentScroll > lastScroll && !document.querySelector("header").classList.contains("hide")) {
-                // scrolling down
-                document.querySelector("header").classList.add("hide");
-            } else if (currentScroll < lastScroll && document.querySelector("header").classList.contains("hide")) {
-                // scrolling up
-                document.querySelector("header").classList.remove("hide");
-            }
-
-            lastScroll = currentScroll;
-        });
-    </script>
-    <img src="experience page.jpeg" class="floating-cat3">
-</body>
-</html>
+<img src="experience page.jpeg" class="floating-cat2">
 </body>
 </html>
