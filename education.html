@@ -5,70 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Education • Neko-Chii!</title>
+    <title>FAQ • Neko-Chii!</title>
 
     <style>
-        .edu-container {
-            max-width: 800px;
-            margin:  0 auto;
-            padding-top: 10rem;
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 12rem 5% 10rem;
             text-align: center;
         }
-        .timeline {
-            position: relative;
-            margin: 5rem auto;
-        }
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background: pink;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 3px;
-        }
-        .event {
-            padding: 20px 40px;
-            position: relative;
-            width: 50%;
-            opacity: 0;
-            animation: slideIn 0.8s ease-out forwards;
-        }
-        .event:nth-child(odd)  { left: 0; }
-        .event:nth-child(even) { left: 50%; }
-        .event::after {
-            content: '♡';
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            right: -25px;
-            background: #b74b4b;
-            color: white;
-            border-radius: 50%;
-            top: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            z-index: 1;
-        }
-        .event:nth-child(even)::after { left: -25px; }
-        .content {
-            padding: 2rem;
-            background: rgba(183, 75, 75, 0.1);
+        .faq-item {
+            margin: 2rem 0;
+            background: rgba(183, 75, 75, 0.08);
             border-radius: 2rem;
+            overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        @keyframes slideIn {
-            to { opacity: 1; transform: translateY(0); }
+        .faq-question {
+            width: 100%;
+            padding: 2.5rem;
+            background: transparent;
+            border: none;
+            text-align: left;
+            font-size: 2.4rem;
+            color: #b74b4b;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        @media (max-width: 995px) {
-            .timeline::after { left: 31px; }
-            .event { width: 100%; padding-left: 70px; padding-right: 25px; }
-            .event:nth-child(odd), .event:nth-child(even) { left: 0; }
-            .event::after { left: 6px; }
+        .faq-question::after {
+            content: '+';
+            font-size: 3rem;
+            transition: 0.3s;
+        }
+        .faq-question.active::after {
+            content: '−';
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 2.5rem;
+            font-size: 1.8rem;
+            background: rgba(255,255,255,0.7);
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-answer.show {
+            max-height: 300px;
+            padding: 2.5rem;
         }
     </style>
 </head>
@@ -76,87 +60,83 @@
 
 <header>
     <a href="index.html" class="logo">Neko-Chii!</a>
-
-    <!-- Hamburger icon (only shows on mobile) -->
     <div class="menu-toggle" onclick="toggleMenu()">
         <i class="fas fa-bars"></i>
     </div>
 
     <nav id="navbar">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="skills.html">Skills</a>
-            <a href="education.html" class="active">Education</a>
-            <a href="experience.html">Experience</a>
-            <a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="skills.html">Skills</a>
+        <a href="education.html" class="active">FAQ</a>  <!-- still called Education in menu -->
+        <a href="experience.html">Reviews</a>
+        <a href="contact.html">Contact</a>
     </nav>
 </header>
 
-    <section class="home" style="flex-direction: column;">
-        <div class="edu-container">
-            <h1 style="font-size: 6.5rem; color: #b74b4b; margin-bottom: 3rem;">Education ♡</h1>
+<section class="home" style="flex-direction: column;">
+    <div class="faq-container">
+        <h1 style="font-size: 6.5rem; color: #b74b4b; margin-bottom: 4rem;">FAQ ♡</h1>
 
-            <div class="timeline">
-
-                <div class="event" style="animation-delay: 0.2s;">
-                    <div class="content">
-                        <h3 style="font-size: 2.8rem; color: #b74b4b;">High School</h3>
-                        <p style="font-size: 1.8rem; margin: 1rem 0;">SMA Negeri 1 Somewhere<br>2018 – 2021</p>
-                    </div>
-                </div>
-
-                <div class="event" style="animation-delay: 0.4s;">
-                    <div class="content">
-                        <h3 style="font-size: 2.8rem; color: #b74b4b;">Self-Taught Hustler</h3>
-                        <p style="font-size: 1.8rem; margin: 1rem 0;">Online Business & Digital Skills<br>2021 – Present ♡</p>
-                    </div>
-                </div>
-
-                <div class="event" style="animation-delay: 0.6s;">
-                    <div class="content">
-                        <h3 style="font-size: 2.8rem; color: #b74b4b;">Top Up University</h3>
-                        <p style="font-size: 1.8rem; margin: 1rem 0;">Master in ML, Genshin, Netflix Sharing<br>Certified Trusted Seller 1000+ reviews</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <a href="skills.html" class="btn" style="margin-top: 4rem; font-size: 1.8rem;">
-                Next: My Skills →
-            </a>
+        <div class="faq-item">
+            <button class="faq-question">Is it safe?<span></span></button>
+            <div class="faq-answer">Yes! 100% safe, never banned, 3000+ happy customers ♡</div>
         </div>
-    </section>
 
-    <script>
-        // Toggle mobile menu
-        function toggleMenu() {
-            document.getElementById("navbar").classList.toggle("active");
+        <div class="faq-item">
+            <button class="faq-question">How fast do I get my order?<span></span></button>
+            <div class="faq-answer">Usually under 10 minutes! I’m almost always online~</div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What payment methods?<span></span></button>
+            <div class="faq-answer">QRIS, Dana, OVO, Gopay, ShopeePay, bank transfer — anything!</div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Can I get proof first?<span></span></button>
+            <div class="faq-answer">Of course! I always send proof + many vouches available</div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What if something goes wrong?<span></span></button>
+            <div class="faq-answer">Full refund or re-delivery, no questions asked ♡</div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Toggle mobile menu
+    function toggleMenu() {
+        document.getElementById("navbar").classList.toggle("active");
+    }
+
+    // Hide header on scroll
+    let lastScroll = 0;
+    window.addEventListener("scroll", () => {
+        let currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+            document.querySelector("header").classList.remove("hide");
+            return;
         }
+        if (currentScroll > lastScroll && !document.querySelector("header").classList.contains("hide")) {
+            document.querySelector("header").classList.add("hide");
+        } else if (currentScroll < lastScroll && document.querySelector("header").classList.contains("hide")) {
+            document.querySelector("header").classList.remove("hide");
+        }
+        lastScroll = currentScroll;
+    });
 
-        // Hide header when scrolling down, show when scrolling up
-        let lastScroll = 0;
-        window.addEventListener("scroll", () => {
-            let currentScroll = window.pageYOffset;
-
-            if (currentScroll <= 0) {
-                document.querySelector("header").classList.remove("hide");
-                return;
-            }
-
-            if (currentScroll > lastScroll && !document.querySelector("header").classList.contains("hide")) {
-                // scrolling down
-                document.querySelector("header").classList.add("hide");
-            } else if (currentScroll < lastScroll && document.querySelector("header").classList.contains("hide")) {
-                // scrolling up
-                document.querySelector("header").classList.remove("hide");
-            }
-
-            lastScroll = currentScroll;
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            button.classList.toggle('active');
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('show');
         });
-    </script>
+    });
+</script>
 
-    <img src="education page.jpeg" class="floating-cat">
-</body>
-</html>
+<img src="education page.jpeg" class="floating-cat3">
 </body>
 </html>
