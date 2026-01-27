@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>About Me • Neko-Chii!</title>
+</head>
+<body class="page-transition">
+
+    <header>
+        <a href="index.html" class="logo">Neko-Chii!</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="navbar">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">FAQ</a>
+            <a href="experience.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" style="flex-direction: column; text-align: center; padding-top: 12rem;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h1 style="font-size: 6.5rem; color: #b74b4b; margin-bottom: 3rem;">About Me ♡</h1>
+
+            <!-- Your Bio Here – copy-paste or edit this -->
+            <div style="background: rgba(183,75,75,0.08); border-radius: 2.5rem; padding: 4rem; box-shadow: 0 10px 30px rgba(183,75,75,0.15);">
+                <img src="main.jpeg" alt="Achii" style="width: 280px; height: 280px; border-radius: 50%; margin-bottom: 2rem; box-shadow: 0 0 30px rgba(183,75,75,0.4);">
+
+                <p style="font-size: 2.2rem; line-height: 1.8; margin: 2rem 0;">
+                    hi i'm achii ♡<br>
+                    your trusted neko seller since 2021<br>
+                    fast top-up • premium apps • editing magic<br>
+                    3000+ happy customers can't be wrong~<br><br>
+                    self-taught hustler who turned love for games, aesthetics, and cute things into this cozy little store.<br>
+                    everything i do is 100% safe, super fast, with proofs & vouches always ready.<br>
+                    dm me anytime i'm always online for you~ ✧
+                </p>
+
+                <div style="margin-top: 4rem;">
+                    <a href="https://instagram.com/yourusername" target="_blank" class="btn" style="font-size: 2rem; padding: 1.5rem 4rem; margin: 1rem;">
+                        DM Me on Instagram ♡
+                    </a>
+                    <a href="contact.html" class="btn" style="font-size: 2rem; padding: 1.5rem 4rem; margin: 1rem;">
+                        Contact Page
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navbar").classList.toggle("active");
+        }
+
+        let lastScroll = 0;
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) {
+                document.querySelector("header").classList.remove("hide");
+                return;
+            }
+            if (currentScroll > lastScroll && !document.querySelector("header").classList.contains("hide")) {
+                document.querySelector("header").classList.add("hide");
+            } else if (currentScroll < lastScroll && document.querySelector("header").classList.contains("hide")) {
+                document.querySelector("header").classList.remove("hide");
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+
+    <!-- Your floating cat if you want -->
+    <img src="main.jpeg" class="floating-cat2">
+</body>
+</html>

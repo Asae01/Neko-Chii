@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Roblox Prices • Neko-Chii!</title>
+</head>
+<body class="page-transition">
+
+    <header>
+        <a href="index.html" class="logo">Neko-Chii!</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="navbar">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">FAQ</a>
+            <a href="experience.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" style="flex-direction: column; text-align: center; padding-top: 12rem;">
+        <h1 style="font-size: 6rem; color: #b74b4b; margin-bottom: 3rem;">Roblox Robux Prices ♡</h1>
+        <p style="font-size: 2rem; margin-bottom: 4rem;">Fast & safe delivery • Prices updated 2026</p>
+
+        <div style="max-width: 900px; margin: 0 auto;">
+
+            <!-- Robux via Login -->
+            <div style="background: rgba(183,75,75,0.1); border-radius: 2rem; padding: 3rem; margin: 2rem 0;">
+                <h2 style="font-size: 4rem; color: #b74b4b; margin-bottom: 2rem;">Robux via Login</h2>
+                <ul style="list-style: none; font-size: 2.2rem; line-height: 2.2; font-weight: 500;">
+                    <li>80 Robux → 16.000</li>
+                    <li>160 Robux → 31.000</li>
+                    <li>240 Robux → 45.500</li>
+                    <li>320 Robux → 60.000</li>
+                    <li>400 Robux → 70.000</li>
+                    <li>500 Robux → 73.000</li>
+                </ul>
+                <p style="font-size: 1.8rem; margin-top: 2rem; color: #555;">Account login method • Instant delivery</p>
+            </div>
+
+            <!-- Robux via Gamepass -->
+            <div style="background: rgba(183,75,75,0.1); border-radius: 2rem; padding: 3rem; margin: 2rem 0;">
+                <h2 style="font-size: 4rem; color: #b74b4b; margin-bottom: 2rem;">Robux via Gamepass</h2>
+                <ul style="list-style: none; font-size: 2.2rem; line-height: 2.2; font-weight: 500;">
+                    <li>100 Robux → 12.000</li>
+                    <li>200 Robux → 23.000</li>
+                    <li>300 Robux → 32.500</li>
+                    <li>500 Robux → 56.000</li>
+                    <li>1000 Robux → 107.000</li>
+                    <li>1500 Robux → 161.000</li>
+                    <li>2000 Robux → 213.000</li>
+                </ul>
+                <p style="font-size: 1.8rem; margin-top: 2rem; color: #555;">Gamepass method • No login needed</p>
+            </div>
+
+            <p style="font-size: 2.2rem; margin: 5rem 0;">Bulk orders? Custom amounts? DM me for best price & promo!</p>
+
+            <a href="https://t.me/NekochiiStore" target="_blank" class="btn" style="font-size: 2.2rem; padding: 1.5rem 4rem;">
+                Order Robux Now ♡
+            </a>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navbar").classList.toggle("active");
+        }
+
+        let lastScroll = 0;
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) {
+                document.querySelector("header").classList.remove("hide");
+                return;
+            }
+            if (currentScroll > lastScroll && !document.querySelector("header").classList.contains("hide")) {
+                document.querySelector("header").classList.add("hide");
+            } else if (currentScroll < lastScroll && document.querySelector("header").classList.contains("hide")) {
+                document.querySelector("header").classList.remove("hide");
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+
+    <!-- Your floating cat -->
+    <img src="main.jpeg" class="floating-cat2">
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Social Media Needs • Neko-Chii!</title>
+</head>
+<body class="page-transition">
+
+    <header>
+        <a href="index.html" class="logo">Neko-Chii!</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="navbar">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">FAQ</a>
+            <a href="experience.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" style="flex-direction: column; text-align: center; padding-top: 14rem;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h1 style="font-size: 6.5rem; color: #b74b4b; margin-bottom: 2rem;">Social Media Needs ♡</h1>
+            
+            <div style="background: rgba(183,75,75,0.08); border-radius: 3rem; padding: 5rem 3rem; box-shadow: 0 10px 40px rgba(183,75,75,0.15); backdrop-filter: blur(10px);">
+                <i class="fas fa-heart" style="font-size: 8rem; color: #b74b4b; margin-bottom: 2rem;"></i>
+                <h2 style="font-size: 4.5rem; color: #b74b4b; margin-bottom: 1.5rem;">Coming Soon</h2>
+                <p style="font-size: 2.2rem; line-height: 1.6;">
+                    Followers, likes, views, subs for IG, TikTok, Twitter, YouTube & more ♡<br><br>
+                    Prices & packages are almost ready!<br>
+                    Stay tuned — launching very soon~
+                </p>
+                <a href="services.html" class="btn" style="margin-top: 4rem; font-size: 2rem; padding: 1.5rem 4rem;">
+                    Back to Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navbar").classList.toggle("active");
+        }
+
+        let lastScroll = 0;
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) {
+                document.querySelector("header").classList.remove("hide");
+                return;
+            }
+            if (currentScroll > lastScroll && !document.querySelector("header").classList.contains("hide")) {
+                document.querySelector("header").classList.add("hide");
+            } else if (currentScroll < lastScroll && document.querySelector("header").classList.contains("hide")) {
+                document.querySelector("header").classList.remove("hide");
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+
+    <img src="main.jpeg" class="floating-cat2">
+</body>
+</html>
