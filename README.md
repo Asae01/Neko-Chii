@@ -83,6 +83,6 @@ git clone https://github.com/Asae01/Neko-Chii.git
 
 ## 👤 Developer
 
-**Syed Adam bin Syed Dzol Hakhim**  
+**Asae**  
 Diploma in Computer Science, Universiti Teknologi MARA  
 Built using HTML, CSS, JavaScript and AI-assisted development (ChatGPT)
