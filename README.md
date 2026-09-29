@@ -1,11 +1,11 @@
-# Neko-Chii! 🐱
+Neko-Chii!
 
 A responsive multi-page website built for a friend's online digital store. The site serves as a storefront and catalogue for digital services including in-game top-ups, premium app accounts, and creative services.
 
 ---
-🌐 Live Demo: https://asae01.github.io/Neko-Chii/
+Live Demo: https://asae01.github.io/Neko-Chii/
 
-## 🌐 Pages
+ ## Pages
 
 | Page | Description |
 |------|-------------|
@@ -23,7 +23,7 @@ A responsive multi-page website built for a friend's online digital store. The s
 
 ---
 
-## ✨ Features
+## Features
 
 - Responsive design — works on mobile and desktop
 - Hamburger menu for mobile navigation
@@ -36,7 +36,7 @@ A responsive multi-page website built for a friend's online digital store. The s
 
 ---
 
-## 🛠️ Built With
+##  Built With
 
 - HTML5
 - CSS3
@@ -46,7 +46,7 @@ A responsive multi-page website built for a friend's online digital store. The s
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 Neko-Chii/
@@ -70,7 +70,7 @@ Neko-Chii/
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 1. Clone the repository:
 ```bash
@@ -81,7 +81,7 @@ git clone https://github.com/Asae01/Neko-Chii.git
 
 ---
 
-## 👤 Developer
+##  Developer
 
 **Asae**  
 Diploma in Computer Science, Universiti Teknologi MARA  
